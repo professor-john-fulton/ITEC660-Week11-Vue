@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+
+  <div id="app">        
+    <h1> {{ message }}</h1>  
+    
+    <button @click="showDetails = showDetails"> Show Details: {{showDetails}}</button>
+    <button @click="edit = !edit"> EDIT: {{edit}}</button>
+    
+    <div >
+      <p> use a loop to get the contacts *** {{contact = contacts[0]}}  ***</p>
+      <br>
+
+      <p>{{ contact.name }} - {{ contact.email }} </p>
+      <div v-show="edit">
+        <input v-model="contact.name">
+        <input v-model="contact.email">
+      </div>
+           
+      <div v-show="OK">
+        <p> Age: {{contact.age}} </p>
+        <p> {{ contact.link }} </p>
+       
+        <button @mouseover="contact.age++">Increase age</button>
+        <button @mouseover="contact.age">Decrease age</button>
+       
+      </div>   
+
+    </div>
+
+    <br>
+   
+
+  </div>
+ 
+
+  <script src="app.js"></script>
+</body>
+</html>
