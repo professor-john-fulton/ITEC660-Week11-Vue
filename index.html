@@ -12,8 +12,8 @@
     <button v-on:click="showDetails = !showDetails"> Show Details: {{showDetails}}</button>
     <button @click="edit = !edit"> EDIT: {{edit}}</button>
     
-    <div >
-      <p> use a loop to get the contacts *** {{contact = contacts[0]}}  ***</p>
+    <div v-for="contact in contacts">
+      
       <br>
 
       <p>{{ contact.name }} - {{ contact.email }} </p>
