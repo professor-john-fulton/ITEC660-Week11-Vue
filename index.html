@@ -9,7 +9,7 @@
   <div id="app">        
     <h1> {{ message }}</h1>  
     
-    <button @click="showDetails = showDetails"> Show Details: {{showDetails}}</button>
+    <button v-on:click="showDetails = !showDetails"> Show Details: {{showDetails}}</button>
     <button @click="edit = !edit"> EDIT: {{edit}}</button>
     
     <div >
@@ -22,12 +22,12 @@
         <input v-model="contact.email">
       </div>
            
-      <div v-show="OK">
+      <div v-show="showDetails">
         <p> Age: {{contact.age}} </p>
         <p> {{ contact.link }} </p>
        
-        <button @mouseover="contact.age++">Increase age</button>
-        <button @mouseover="contact.age">Decrease age</button>
+        <button @click="contact.age++">Increase age</button>
+        <button @click="contact.age--">Decrease age</button>
        
       </div>   
 
